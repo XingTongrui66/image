@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Abstract Editorial - 摄影与抽象编辑艺术</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
+    <!-- 顶部导航 -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <svg viewBox="0 0 24 24" width="32" height="32" fill="#F3F0E8">
+                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 10l2.5 3.5L12 12l3 4H7z"/>
+                </svg>
+                <span>Photo Abstract Editorial</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="#features">功能特点</a>
+                <a href="#examples">示例作品</a>
+                <a href="#top">开始创作</a>
+                <button type="button" class="nav-history" id="historyBtn">历史记录</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main class="main">
+        <!-- 左侧上传区 -->
+        <section class="upload-section">
+            <div class="upload-box" id="uploadBox">
+                <div class="upload-icon">
+                    <svg viewBox="0 0 24 24" width="48" height="48" fill="#F3F0E8">
+                        <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/>
+                    </svg>
+                </div>
+                <h3>上传照片</h3>
+                <p>拖拽图片到这里，或点击选择</p>
+                <input type="file" id="fileInput" accept="image/*">
+                <button class="upload-btn">选择图片</button>
+            </div>
+
+            <div class="example-list" id="exampleList">
+                <h3>示例作品</h3>
+                <div class="example-grid">
+                    <!-- 示例图片将通过 JS 动态生成 -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 中间分隔线 -->
+        <div class="divider"></div>
+
+        <!-- 右侧结果展示区 -->
+        <section class="result-section">
+            <div class="result-panel">
+                <h2 class="result-title">效果预览</h2>
+                
+                <div class="preview-container">
+                    <div class="preview-header">
+                        <span class="preview-label">原图</span>
+                    </div>
+                    <div class="original-image" id="originalImage">
+                        <div class="placeholder">
+                            <svg viewBox="0 0 24 24" width="64" height="64" fill="#F3F0E8">
+                                <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                            </svg>
+                            <p>原图面板</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="result-divider"></div>
+
+                <div class="mock-result">
+                    <div class="mock-header">
+                        <span class="mock-label">抽象编辑作品</span>
+                    </div>
+                    <div class="mock-artwork" id="mockArtwork">
+                        <div class="mock-placeholder">
+                            <svg viewBox="0 0 24 24" width="64" height="64" fill="#F3F0E8">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                            </svg>
+                            <p>抽象面板</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="title-display" id="titleDisplay">
+                    <p class="empty-title">点击示例图片或上传照片生成标题</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 功能特点部分 -->
+    <section class="features" id="features">
+        <h2>功能特点</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" width="32" height="32" fill="#F3F0E8">
+                        <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM5 5h14v14H5V5zm7 12h-2v-2h2v2zm0-4h-2V9h2v4z"/>
+                    </svg>
+                </div>
+                <h3>保留原图真实内容</h3>
+                <p>照片区域保持原始内容，不重画、不修饰、不变形</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" width="32" height="32" fill="#F3F0E8">
+                        <path d="M12 3c4.97 0 9 4.03 9 9s-4.03 9-9 9-9-4.03-9-9 4.03-9 9-9zm0 16c3.87 0 7-3.13 7-7s-3.13-7-7-7-7 3.13-7 7 3.13 7 7 7zm-1-11h2v2h-2zm0 4h2v6h-2z"/>
+                    </svg>
+                </div>
+                <h3>抽象记忆面板</h3>
+                <p>从照片中提取空间关系、色彩和构图，生成极简抽象艺术</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" width="32" height="32" fill="#F3F0E8">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                </div>
+                <h3>诗意英文标题</h3>
+                <p>根据照片内容创作原创英文标题，赋予作品艺术感</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 示例作品部分 -->
+    <section class="examples" id="examples">
+        <h2>示例作品</h2>
+        <p class="examples-desc">点击下方示例查看抽象编辑效果</p>
+        <div class="examples-grid">
+            <div class="example-item">
+                <img src="assets/examples/case-1.jpg" alt="示例1">
+                <div class="example-overlay">
+                    <span>查看效果</span>
+                </div>
+            </div>
+            <div class="example-item">
+                <img src="assets/examples/case-2.jpg" alt="示例2">
+                <div class="example-overlay">
+                    <span>查看效果</span>
+                </div>
+            </div>
+            <div class="example-item">
+                <img src="assets/examples/case-3.jpg" alt="示例3">
+                <div class="example-overlay">
+                    <span>查看效果</span>
+                </div>
+            </div>
+            <div class="example-item">
+                <img src="assets/examples/case-4.jpg" alt="示例4">
+                <div class="example-overlay">
+                    <span>查看效果</span>
+                </div>
+            </div>
+            <div class="example-item">
+                <img src="assets/examples/case-6.jpg" alt="示例6">
+                <div class="example-overlay">
+                    <span>查看效果</span>
+                </div>
+            </div>
+            <div class="example-item">
+                <img src="assets/examples/case-7.jpg" alt="示例7">
+                <div class="example-overlay">
+                    <span>查看效果</span>
+                </div>
+            </div>
+            <div class="example-item">
+                <img src="assets/examples/case-8.jpg" alt="示例8">
+                <div class="example-overlay">
+                    <span>查看效果</span>
+                </div>
+            </div>
+            <div class="example-item">
+                <img src="assets/examples/case-9.jpg" alt="示例9">
+                <div class="example-overlay">
+                    <span>查看效果</span>
+                </div>
+            </div>
+            <div class="example-item">
+                <img src="assets/examples/case-10.jpg" alt="示例10">
+                <div class="example-overlay">
+                    <span>查看效果</span>
+                </div>
+            </div>
+            <div class="example-item">
+                <img src="assets/examples/case-11.jpg" alt="示例11">
+                <div class="example-overlay">
+                    <span>查看效果</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2024 Photo Abstract Editorial. All rights reserved.</p>
+            <p>Free for personal, educational and non-commercial use.</p>
+        </div>
+    </footer>
+
+    <!-- 历史记录抽屉 -->
+    <div class="history-mask" id="historyMask"></div>
+    <aside class="history-drawer" id="historyDrawer" aria-hidden="true" aria-label="历史记录">
+        <div class="history-head">
+            <h3>历史记录</h3>
+            <div class="history-actions">
+                <button type="button" class="history-clear" id="historyClear">清空</button>
+                <button type="button" class="history-close" id="historyClose" aria-label="关闭">×</button>
+            </div>
+        </div>
+        <div class="history-list" id="historyList"></div>
+    </aside>
+
+    <script src="script.js"></script>
+</body>
+</html>
